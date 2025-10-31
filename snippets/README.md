@@ -209,18 +209,6 @@ public class Main {
 
 ---
 
-## Tips for Competitive Coding
-
-1. **Always test** your code with sample inputs before submitting
-2. **Handle edge cases** like empty arrays, single elements, etc.
-3. **Use prefix sums** for multiple range queries
-4. **Prefer FastIO** for problems with large input/output
-5. **Remember modulo** operations when dealing with large numbers
-6. **Initialize arrays properly** to avoid null pointer exceptions
-7. **Use 1-indexed arrays** for easier implementation in some algorithms
-
----
-
 ## Time Complexity Analysis
 
 ### Quick Lookup by Operation
