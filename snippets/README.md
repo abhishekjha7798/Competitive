@@ -221,6 +221,87 @@ public class Main {
 
 ---
 
+## Time Complexity Analysis
+
+### Quick Lookup by Operation
+
+| Operation | Time Complexity | Space | Notes |
+|---|---|---|---|
+| **Sieve of Eratosthenes** | O(n log log n) | O(n) | Fastest way to find all primes up to n |
+| **Segmented Sieve** | O(√n + k log log √n) | O(√n + k) | k = range size; optimal for large ranges |
+| **GCD (Euclidean)** | O(log min(a,b)) | O(1) | Very fast, even for huge numbers |
+| **Binary Search** | O(log n) | O(1) | Requires sorted array |
+| **Union-Find (DSU)** | O(α(n)) ≈ O(1) | O(n) | With path compression & union by rank |
+| **Segment Tree Build** | O(n) | O(n) | Build once, then query/update in O(log n) |
+| **Segment Tree Query** | O(log n) | - | Range sum query |
+| **Segment Tree Update** | O(log n) | - | Point update |
+| **Merge Sort** | O(n log n) | O(n) | Stable, consistent performance |
+| **Quick Sort** | O(n log n) avg, O(n²) worst | O(log n) | Fast in practice, worst case rare |
+| **BFS** | O(V + E) | O(V) | V=vertices, E=edges |
+| **DFS** | O(V + E) | O(V) | Recursive depth = O(V) space |
+| **Fibonacci (DP)** | O(n) | O(n) | Iterative; memoization prevents recalculation |
+| **0/1 Knapsack** | O(n × capacity) | O(n × capacity) | Classic DP, polynomial time |
+| **Unbounded Knapsack** | O(n × capacity) | O(capacity) | Space optimized 1D DP |
+| **LCS (Longest Common Subsequence)** | O(m × n) | O(m × n) | m,n = string lengths |
+| **Edit Distance** | O(m × n) | O(m × n) | Levenshtein distance |
+| **LIS (Longest Increasing Subseq)** | O(n²) basic, O(n log n) optimized | O(n) | Binary search optimization available |
+| **Coin Change** | O(amount × coins) | O(amount) | 1D DP array |
+| **KMP String Matching** | O(n + m) | O(m) | n=text length, m=pattern length |
+| **Palindrome Check** | O(n) | O(1) | Two-pointer approach |
+| **Longest Substring (no repeat)** | O(n) | O(min(n, charset)) | Sliding window with hash map |
+| **Prime Checking** | O(√n) | O(1) | Trial division up to √n |
+| **Modular Exponentiation** | O(log exp) | O(1) | Fast power by squaring |
+| **Prefix Sum Build** | O(n) | O(n) | Build once for O(1) range queries |
+| **Range Sum Query** | O(1) | - | Using precomputed prefix sums |
+| **Kadane's Algorithm** | O(n) | O(1) | Maximum subarray sum |
+| **Majority Element** | O(n) | O(1) | Boyer-Moore voting algorithm |
+| **Two Pointer (sorted)** | O(n) | O(1) | Find pair with target sum |
+
+---
+
+### Complexity Class Reference
+
+```
+Best case scenarios:
+┌─────────────────────────┐
+│ O(1)      - Constant    │ (fastest)
+│ O(log n)  - Logarithmic │
+│ O(n)      - Linear      │
+│ O(n log n)- Linearithmic│
+│ O(n²)     - Quadratic   │
+│ O(2ⁿ)     - Exponential │ (slowest)
+└─────────────────────────┘
+
+General Rules:
+- n = 10⁶  → O(n) and O(n log n) are fast, O(n²) is too slow
+- n = 10⁴  → O(n²) is acceptable, O(n³) is too slow
+- n = 500  → O(n³) is acceptable, O(n⁴) is too slow
+```
+
+---
+
+### Choosing the Right Algorithm
+
+**Finding Primes:**
+- Single prime check: `O(√n)` with `isPrime()`
+- All primes up to n: `O(n log log n)` with `sieve()`
+- Primes in range [L, R]: `O(√R + (R-L) log log √R)` with `segmentedSieve()`
+
+**Range Queries:**
+- One-time query: `O(n)` with linear scan
+- Multiple queries: `O(n log n)` with Segment Tree or `O(n)` with Prefix Sum (if only sums)
+- Dynamic updates: `O(log n)` per operation with Segment Tree
+
+**String Matching:**
+- Single occurrence: `O(n + m)` with KMP
+- Multiple searches: Preprocess with KMP, then `O(n + m)` each time
+
+**Graph Problems:**
+- Connected components: Use DSU `O(n × α(n))`
+- Path finding: Use BFS/DFS `O(V + E)`
+
+---
+
 ## File Organization
 
 ```
@@ -246,4 +327,3 @@ snippets/
 October 31, 2025
 
 Happy Coding! 🚀
-
