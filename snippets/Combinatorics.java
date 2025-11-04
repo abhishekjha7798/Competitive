@@ -202,5 +202,15 @@ public class Combinatorics {
         }
         return pascal;
     }
+
+    // ========== Number of digits in n! ==========
+    public static int digitsInFactorial(int n) {
+        if (n <= 1) return 1;
+        double logSum = 0.0;
+        for (int k = 2; k <= n; k++) {
+            logSum += Math.log10(k);
+        }
+        return (int) logSum + 1; // floor(logSum) + 1
+    }
 }
 
