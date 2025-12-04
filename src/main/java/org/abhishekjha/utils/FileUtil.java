@@ -10,7 +10,7 @@ public final class FileUtil {
 
     public static String readFileAsString(String path) {
         try {
-            return Files.readString(Path.of(path), StandardCharsets.UTF_8);
+            return Files.readString(Path.of("src/main/java/org/abhishekjha/" + path), StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new RuntimeException("Failed to read file: " + path, e);
         }

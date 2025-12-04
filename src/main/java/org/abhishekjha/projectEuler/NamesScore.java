@@ -33,7 +33,7 @@ public class NamesScore {
 
     public static void main(String[] args) {
         // Load names from the file (assuming names are in a single line, separated by commas and enclosed in quotes)
-        String filePath = "src/main/java/org/abhishekjha/projectEuler/resources/names.txt";
+        String filePath = "projectEuler/resources/names.txt";
         String fileContent = FileUtil.readFileAsString(filePath);
         String[] names = fileContent.replace("\"", "").split(",");
 

@@ -154,7 +154,7 @@ public class Day1 {
         };
 
         // read input from ./Day1.txt if needed
-        String content = FileUtil.readFileAsString("src/main/java/org/abhishekjha/adventOfCode25/input/Day1.txt");
+        String content = FileUtil.readFileAsString("adventOfCode25/input/Day1.txt");
         rotations = content.split("\n");
 
         int result1 = solvePart1(rotations);
